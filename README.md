@@ -17,6 +17,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     ```diff
     + Setup Minikube
     + Verify Installation
+    + Production Cluster
     ```
 
 ----------------------------------------
@@ -46,5 +47,17 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 # View local cluster config:
 cat ~/.kube/config
 ```
+
+----------------------------------------
+
+```diff
++ Production Cluster
+```
+- `kops` and `kubeadm` are tools to spin up a production cluster.
+- With `AWS EKS` which is a hosted solution, we don't need to maintain the `masters`.
+- On AWS, if we dont want to use `AWS EKS`, then the best tool after `EKS` is `kops`.
+- With `kops`, we own all the infrastructure, so we also need to maintain the `masters`.
+- `Kubeadm` is an alternative approach, `kops` is still recommended (on AWS) - because we also get AWS integrations (IAM, Load Balancer etc..) with `kops` automatically.
+- `Kubeadm` is more of a generic tool. It is used more on DigitalOcean or bare metal setup.
 
 ----------------------------------------
